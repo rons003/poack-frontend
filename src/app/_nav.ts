@@ -39,13 +39,13 @@ export const navItems: NavData[] = [
   //     text: 'NEW'
   //   }
   // },
-  // {
-  //   title: true,
-  //   name: 'Theme'
-  // },
-  // {
-  //   name: 'Colors',
-  //   url: '/theme/colors',
-  //   icon: 'icon-drop'
-  // }
+  {
+    title: true,
+    name: 'Main'
+  },
+  {
+    name: 'Poack',
+    url: '/poack',
+    icon: 'icon-drop'
+  }
 ];

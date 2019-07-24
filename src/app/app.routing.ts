@@ -8,11 +8,12 @@ import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
+import { PoackComponent } from './views/poack/poack.component';
 
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'poack',
     pathMatch: 'full',
   },
   {
@@ -51,6 +52,13 @@ export const routes: Routes = [
     },
     children: [
       {
+        path: 'poack',
+        component: PoackComponent,
+        data: {
+          title: 'Purchase Order Acknowledgement'
+        }
+      },
+      {
         path: 'dashboard',
         loadChildren: () => import('./views/dashboard/dashboard.module').then(m => m.DashboardModule)
       }
@@ -60,7 +68,7 @@ export const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
-  exports: [ RouterModule ]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
